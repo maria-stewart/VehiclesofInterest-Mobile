@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewVehicleOfInterestTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <b:panel collapsible="False">
+                    <f:facet name="heading">
+                        <h:outputText value="Vehicle of Interest Description" />
+                    </f:facet>
+                    <h:panelGrid columns="2">
+                        <h:outputText value="License Plate: " />
+                        <b:inputText value="#{vehicleOfInterestController.selected.licensePlate}" readonly="true" tiny-screen="full-width" />
+                        
+                        <h:outputText value="Vehicle Year: " />
+                        <b:inputText value="#{vehicleOfInterestController.selected.vehYear}" readonly="true" tiny-screen="full-width" />
+                        
+                        <h:outputText value="#Color: " />
+                        <b:inputText value="#{vehicleOfInterestController.selected.color}" readonly="true" tiny-screen="full-width" />
+                        
+                        <h:outputText value="Owner's Name: " />
+                        <b:inputText value="#{vehicleOfInterestController.selected.ownersName}" readonly="true" tiny-screen="full-width" />
+                        
+                        <h:outputText value="Owner's Phone: "/>
+                        <b:inputText value="#{vehicleOfInterestController.selected.ownersPhone}" readonly="true" tiny-screen="full-width" />
+                        
+                        <h:outputText value="Reason: " />
+                        <b:inputText value="#{vehicleOfInterestController.selected.reason}" readonly="true" tiny-screen="full-width" />
+                        
+                        <h:outputText value="Make: " />
+                        <b:inputText value="#{vehicleOfInterestController.selected.make}" readonly="true" tiny-screen="full-width" />
+                        
+                        <h:outputText value="Model: " />
+                        <b:inputText value="#{vehicleOfInterestController.selected.model}" readonly="true" tiny-screen="full-width" />
+                        
+                    </h:panelGrid>
+                </b:panel>
+                <b:pillLinks>
+                    <b:navLink outcome="/vehicleOfInterest/List">Return to Vehicles of Interest</b:navLink>
+                </b:pillLinks>      
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

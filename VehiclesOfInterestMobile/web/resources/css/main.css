@@ -1,0 +1,89 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+.holy-grail-grid {
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-areas:
+        'header'
+        'main-content'
+        'footer';
+}
+
+/* general column padding */
+.holy-grail-grid > * {
+    padding:1rem;
+}
+
+
+/* assign columns to grid areas */
+.holy-grail-grid > .header {
+    grid-area:header;
+    background:#2D352E;
+}
+
+.holy-grail-grid > .main-content {
+    grid-area:main-content;
+    background:#fff;
+    grid-template-columns: 100%;
+}
+
+.holy-grail-grid > .footer {
+    grid-area:footer;
+    background:#2D352E;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.img-policeBadge {
+    width: 70px;
+}
+
+.alignLeft {
+    float: left;
+}
+
+.headerTitle {
+    color: #fff;
+}
+
+.footerTitle {
+    color: #fff;
+}
+
+/* tablet breakpoint */
+@media (max-width:1020px) {
+    .holy-grail-grid {
+        grid-template-columns: 100%;
+        grid-template-areas:
+            'header header'
+            'main-content main-content'
+            'left-sidebar right-sidebar'
+            'footer footer';
+    }
+
+    .headerTitle {
+        font-size: 16px;
+        float: right;
+    }    
+}
+
+/* desktop breakpoint */
+@media (min-width:1024px) {
+    .holy-grail-grid {
+        grid-template-columns: 100%;
+        grid-template-areas:
+            'header header header header'
+            'left-sidebar main-content main-content right-sidebar'
+            'footer footer footer footer';
+    }
+
+    .headerTitle {
+        float: right;
+        font-size: 36px;
+    }
+}
+

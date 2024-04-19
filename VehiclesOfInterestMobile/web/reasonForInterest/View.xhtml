@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewReasonForInterestTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <b:panel collapsible="False">
+  <f:facet name="heading">
+    <h:outputText value="Reason Description" />
+  </f:facet>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewReasonForInterestLabel_reason}"/>
+                    <h:outputText value="#{reasonForInterestController.selected.reason}" title="#{bundle.ViewReasonForInterestTitle_reason}"/>
+                    <h:outputText value="#{bundle.ViewReasonForInterestLabel_description}"/>
+                    <h:outputText value="#{reasonForInterestController.selected.description}" title="#{bundle.ViewReasonForInterestTitle_description}"/>
+                </h:panelGrid>
+               </b:panel>
+                
+                <b:pillLinks>
+                    <b:navLink outcome="/index"><b:iconAwesome value="fa-home" /></b:navLink>
+                    <b:navLink outcome="/reasonForInterest/List">Return to Reasons for Interest Grid</b:navLink>
+                </b:pillLinks>
+
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
